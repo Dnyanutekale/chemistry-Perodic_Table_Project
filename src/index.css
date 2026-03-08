@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alkali: #ff6666;
+  --color-alkaline: #ffdead;
+  --color-transition: #ffc0c0;
+  --color-post-transition: #cccccc;
+  --color-metalloid: #cccc99;
+  --color-nonmetal: #a0ffa0;
+  --color-halogen: #ffff99;
+  --color-noble: #c0ffff;
+  --color-lanthanide: #ffbfff;
+  --color-actinide: #ff99cc;
+  --color-unknown: #e8e8e8;
+
+  --color-dark-alkali: #d32f2f;
+  --color-dark-alkaline: #bfa17c;
+  --color-dark-transition: #c67f7f;
+  --color-dark-post-transition: #8c8c8c;
+  --color-dark-metalloid: #8c8c63;
+  --color-dark-nonmetal: #5b9c5b;
+  --color-dark-halogen: #baba58;
+  --color-dark-noble: #7fa1a1;
+  --color-dark-lanthanide: #b87eb8;
+  --color-dark-actinide: #b85e8a;
+  --color-dark-unknown: #555555;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #cbd5e1;
+  }
+
+  .dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .grid-cols-18 {
+    grid-template-columns: repeat(18, minmax(0, 1fr));
+  }
+  
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .dark .glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
